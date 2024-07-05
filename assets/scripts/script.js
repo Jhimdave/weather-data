@@ -65,7 +65,6 @@ function onError(error) {
 // Function to fetch city name based on coordinates
 async function getCityName(latitude, longitude) {
   container.style.height = "auto";
-  CITY_NAME.style.marginTop = "0";
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${weather_apikey}`
@@ -82,7 +81,6 @@ async function getCityName(latitude, longitude) {
 
     getWeatherData(cityValue);
   } catch (error) {
-    CITY_NAME.style.marginTop = "200px";
     console.error("Error fetching city name:", error);
     showErrorMessage("Error fetching location data. Please try again.");
   }
@@ -100,7 +98,7 @@ async function getWeatherData(cityValue) {
     if (!weatherResult.ok) {
       throw new Error("Network response was not ok");
     }
-
+    CITY_NAME.style.marginTop = "0";
     const weatherData = await weatherResult.json();
 
     const getTemperature = Math.round(weatherData.main.temp);
@@ -127,6 +125,7 @@ async function getWeatherData(cityValue) {
     WEATHER_DATA.classList.remove("hidden");
     TEMPERATURE.classList.remove("hidden");
   } catch (error) {
+    CITY_NAME.style.marginTop = "200px";
     console.error("Error fetching weather data:", error);
     showErrorMessage("Error fetching weather data. Please try again.");
   }
