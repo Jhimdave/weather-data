@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --title-color: #65acd7;
+  --border-color: #ccc;
+  --button-color: #42acf9;
+}
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgb(39, 35, 108);
+  background: linear-gradient(
+    21deg,
+    rgba(39, 35, 108, 1) 0%,
+    rgba(52, 52, 156, 1) 24%,
+    rgba(14, 153, 181, 1) 100%
+  );
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 380px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: height 0.3s ease;
+}
+.navbar {
+  display: flex;
+  color: var(--title-color);
+  font-size: 12px;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 15px;
+}
+.location {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 10px 0;
+  gap: 4px;
+}
+.location > input,
+.location button {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+.location > input {
+  text-align: center;
+  padding: 5px;
+}
+.location > input:focus {
+  border-color: #838383;
+  outline: none;
+}
+.location button {
+  background-color: var(--button-color);
+  color: #fff;
+  padding: 0 10px;
+}
+.location button:hover {
+  border-color: #838383;
+}
+.inputs {
+  display: flex;
+}
+.location p {
+  font-size: small;
+  margin: 4px 3px;
+}
+.weather-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+.weather-data img {
+  width: 140px;
+  height: 140px;
+  padding: 10px;
+}
+.weather-data h4 {
+  font-weight: 600;
+  padding: 2px;
+}
+.temp {
+  font-size: 40px;
+}
+.description,
+.loc {
+  font-size: 12px;
+  font-weight: 500;
+}
+.temperature {
+  display: flex;
+  gap: 10px;
+  padding: 0 15px;
+}
+.temperature > div {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 5px 0;
+}
+.temperature i {
+  color: var(--button-color);
+  font-size: 24px;
+  padding: 5px 10px;
+}
+.temperature h5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.temperature p {
+  font-size: 8px;
+  font-weight: 400;
+}
+.border-temp {
+  border-left: 1px solid var(--border-color);
+}
+
+.hidden {
+  display: none;
+}
+#error-message {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 300px;
+    height: 130px;
+  }
+  .location {
+    flex-direction: column;
+  }
+  .inputs {
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+  }
+  .inputs p {
+    position: relative;
+    text-align: center;
+    width: 100px;
+    padding: 0 5px;
+  }
+  .inputs p::after,
+  .inputs p::before {
+    position: absolute;
+    content: "";
+    border-top: 1px solid var(--border-color);
+    width: 30px;
+    height: 10px;
+  }
+  .inputs p::before {
+    top: 50%;
+    left: 0;
+    margin-left: 5px;
+  }
+  .inputs p::after {
+    bottom: 0;
+    right: 0;
+    margin-right: 5px;
+  }
+  .weather-data img {
+    width: 100px;
+    height: 100px;
+  }
+  .temperature i {
+    font-size: 1.5em;
+  }
+  .temp {
+    font-size: 0.8em; /* Adjust as needed */
+  }
+  .description,
+  .loc,
+  .location p,
+  .temperature,
+  .temperature p {
+    font-size: 0.75em; /* Adjust as needed */
+  }
+}
+@media screen and (max-width: 430px) {
+  body {
+    height: auto;
+    width: auto;
+    background: none;
+  }
+  .container {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+  .navbar {
+    font-size: 28px;
+    justify-content: center;
+  }
+  .location{
+    align-items: center;
+  }
+  .location input{
+    width: 90%;
+  }
+  .weather-data img {
+    width: 180px;
+    height: 180px;
+    padding: 20px;
+  }
+  #city-input{
+    margin-top: 200px;
+  }
+  .temp {
+    font-size: 4em; /* Adjust as needed */
+  }
+  .description,
+  .loc,
+  .location p{
+    font-size: 1.1em; /* Adjust as needed */
+  }
+  .temperature {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    gap: 0;
+    flex: 1;
+  }
+  .temperature div > i {
+    padding: 20px;
+    font-size: 34px;
+    border-right: 1px solid var(--border-color);
+    width: 100px; /* Ensure consistent width for icons */
+    text-align: center;
+  }
+  .temperature div {
+    padding: 0 20px;
+    border: 1px solid var(--border-color);
+  }
+  .temperature h5 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    font-size: 1.3em;
+  }
+  .temperature p{
+    font-size: 1.1em;
+    width: 130px;
+  }
+}
