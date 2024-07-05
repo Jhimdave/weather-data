@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar"><h3>Weather App</h3></div>
+      <div class="location">
+        <input type="text" id="city-input" placeholder="Enter city name" />
+        <div class="inputs">
+          <button id="find-location">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <p>or</p>
+          <button id="get-location">Get Location</button>
+        </div>
+      </div>
+      <div id="error-message" style="display: none; color: red; text-align: center;"></div>
+      <div class="weather-data hidden">
+        <img src="assets/icons/clear.svg" alt="Weather Icon" />
+        <h4 class="temp">22°C</h4>
+        <h4 class="description">Sunny</h4>
+        <h4 class="loc">
+          <i class="fa-regular fa-location-dot"></i> <span id="location-text">Manila, Philippines</span>
+        </h4>        
+      </div>
+      <div class="temperature hidden">
+        <div>
+          <i class="fa-light fa-temperature-sun"></i>
+          <h5>
+            <span class="feels-like">23°C</span>
+            <p>Feels Like</p>
+          </h5>
+        </div>
+        <div class="border-temp">
+          <i class="fa-regular fa-droplet"></i>
+          <h5>
+            <span class="humid">40%</span>
+            <p>Humidity</p>
+          </h5>
+        </div>
+        <div class="border-temp">
+          <i class="fa-regular fa-wind"></i>
+          <h5>
+            <span class="wind-speed">23m/s</span>
+            <p>Windspeed</p>
+          </h5>
+        </div>
+      </div>
+    </div>
+    <script src="assets/scripts/script.js"></script>
+  </body>
+</html>
